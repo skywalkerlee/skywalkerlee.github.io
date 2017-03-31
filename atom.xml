@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-03-31T03:30:15.000Z</updated>
+  <updated>2017-03-31T05:30:49.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://yoursite.com/2017/03/31/nsq-try/"/>
     <id>http://yoursite.com/2017/03/31/nsq-try/</id>
     <published>2017-03-31T11:03:14.000Z</published>
-    <updated>2017-03-31T03:30:15.000Z</updated>
+    <updated>2017-03-31T05:30:49.000Z</updated>
     
-    <content type="html"><![CDATA[<p>NSQ是一个基于Go语言的分布式实时消息平台，它基于MIT开源协议发布，代码托管在<a href="https://github.com/nsqio/nsq" target="_blank" rel="external">GitHub</a></p>
+    <content type="html"><![CDATA[<p>NSQ是一个基于Go语言的分布式实时消息平台，它基于MIT开源协议发布，代码托管在<a href="https://github.com/nsqio/nsq" target="_blank" rel="external">GitHub</a>。</p>
 <h1 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h1><h2 id="nsqd"><a href="#nsqd" class="headerlink" title="nsqd"></a>nsqd</h2><p><code>nsqd</code>是一个守护进程，负责接收，排队，投递消息给客户端。<br>它可以独立运行，不过通常它是由<code>nsqlookupd</code>实例所在集群配置的。</p>
 <h2 id="nsqlookupd"><a href="#nsqlookupd" class="headerlink" title="nsqlookupd"></a>nsqlookupd</h2><p><code>nsqlookupd</code>是一个coordinator。客户端通过查询<code>nsqlookupd</code>来发现指定<code>topic</code>的生产者，和<code>nsqd</code>节点的<code>topic</code>和<code>channel</code>信息。</p>
 <h2 id="nsqadmin"><a href="#nsqadmin" class="headerlink" title="nsqadmin"></a>nsqadmin</h2><p><code>nsqadmin</code>是一个web服务器，用来汇集集群的实时统计，并执行不同的管理任务。<br><a id="more"></a></p>
@@ -35,7 +35,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;NSQ是一个基于Go语言的分布式实时消息平台，它基于MIT开源协议发布，代码托管在&lt;a href=&quot;https://github.com/nsqio/nsq&quot;&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;NSQ是一个基于Go语言的分布式实时消息平台，它基于MIT开源协议发布，代码托管在&lt;a href=&quot;https://github.com/nsqio/nsq&quot;&gt;GitHub&lt;/a&gt;。&lt;/p&gt;
 &lt;h1 id=&quot;组件&quot;&gt;&lt;a href=&quot;#组件&quot; class=&quot;headerlink&quot; title=&quot;组件&quot;&gt;&lt;/a&gt;组件&lt;/h1&gt;&lt;h2 id=&quot;nsqd&quot;&gt;&lt;a href=&quot;#nsqd&quot; class=&quot;headerlink&quot; title=&quot;nsqd&quot;&gt;&lt;/a&gt;nsqd&lt;/h2&gt;&lt;p&gt;&lt;code&gt;nsqd&lt;/code&gt;是一个守护进程，负责接收，排队，投递消息给客户端。&lt;br&gt;它可以独立运行，不过通常它是由&lt;code&gt;nsqlookupd&lt;/code&gt;实例所在集群配置的。&lt;/p&gt;
 &lt;h2 id=&quot;nsqlookupd&quot;&gt;&lt;a href=&quot;#nsqlookupd&quot; class=&quot;headerlink&quot; title=&quot;nsqlookupd&quot;&gt;&lt;/a&gt;nsqlookupd&lt;/h2&gt;&lt;p&gt;&lt;code&gt;nsqlookupd&lt;/code&gt;是一个coordinator。客户端通过查询&lt;code&gt;nsqlookupd&lt;/code&gt;来发现指定&lt;code&gt;topic&lt;/code&gt;的生产者，和&lt;code&gt;nsqd&lt;/code&gt;节点的&lt;code&gt;topic&lt;/code&gt;和&lt;code&gt;channel&lt;/code&gt;信息。&lt;/p&gt;
 &lt;h2 id=&quot;nsqadmin&quot;&gt;&lt;a href=&quot;#nsqadmin&quot; class=&quot;headerlink&quot; title=&quot;nsqadmin&quot;&gt;&lt;/a&gt;nsqadmin&lt;/h2&gt;&lt;p&gt;&lt;code&gt;nsqadmin&lt;/code&gt;是一个web服务器，用来汇集集群的实时统计，并执行不同的管理任务。&lt;br&gt;
