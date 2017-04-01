@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-04-01T07:01:29.000Z</updated>
+  <updated>2017-04-01T07:17:17.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用golang实现一个自旋锁</title>
+    <link href="http://yoursite.com/2017/04/01/spinlock/"/>
+    <id>http://yoursite.com/2017/04/01/spinlock/</id>
+    <published>2017-04-01T15:05:13.000Z</published>
+    <updated>2017-04-01T07:17:17.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>In software engineering, a spinlock is a lock which causes a thread trying to acquire it to simply wait in a loop (“spin”) while repeatedly checking if the lock is available(摘自wikipedia)。<br><a id="more"></a></p>
+<h1 id="自旋锁"><a href="#自旋锁" class="headerlink" title="自旋锁"></a>自旋锁</h1><p>利用cpu提供的原子原语来实现。</p>
+<h2 id="直接上码"><a href="#直接上码" class="headerlink" title="直接上码"></a>直接上码</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">type</span> spinLock <span class="keyword">uint32</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(sl *spinLock)</span> <span class="title">Lock</span><span class="params">()</span></span> &#123;</div><div class="line">	<span class="keyword">for</span> !atomic.CompareAndSwapUint32((*<span class="keyword">uint32</span>)(sl), <span class="number">0</span>, <span class="number">1</span>) &#123;</div><div class="line">		runtime.Gosched()</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(sl *spinLock)</span> <span class="title">Unlock</span><span class="params">()</span></span> &#123;</div><div class="line">	atomic.StoreUint32((*<span class="keyword">uint32</span>)(sl), <span class="number">0</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">NewSpinLock</span><span class="params">()</span> <span class="title">sync</span>.<span class="title">Locker</span></span> &#123;</div><div class="line">	<span class="keyword">var</span> lock spinLock</div><div class="line">	<span class="keyword">return</span> &amp;lock</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;In software engineering, a spinlock is a lock which causes a thread trying to acquire it to simply wait in a loop (“spin”) while repeatedly checking if the lock is available(摘自wikipedia)。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="golang" scheme="http://yoursite.com/tags/golang/"/>
+    
+      <category term="spinlock" scheme="http://yoursite.com/tags/spinlock/"/>
+    
+  </entry>
   
   <entry>
     <title>实现一个分布式消息队列(ohmq)</title>
@@ -70,9 +97,9 @@
       <category term="轮子" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/%E8%BD%AE%E5%AD%90/"/>
     
     
-      <category term="消息队列" scheme="http://yoursite.com/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
-    
       <category term="mq" scheme="http://yoursite.com/tags/mq/"/>
+    
+      <category term="消息队列" scheme="http://yoursite.com/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
     
       <category term="raft" scheme="http://yoursite.com/tags/raft/"/>
     
@@ -116,11 +143,11 @@
       <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="nsq" scheme="http://yoursite.com/tags/nsq/"/>
+      <category term="mq" scheme="http://yoursite.com/tags/mq/"/>
     
       <category term="消息队列" scheme="http://yoursite.com/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
     
-      <category term="mq" scheme="http://yoursite.com/tags/mq/"/>
+      <category term="nsq" scheme="http://yoursite.com/tags/nsq/"/>
     
       <category term="消息" scheme="http://yoursite.com/tags/%E6%B6%88%E6%81%AF/"/>
     
