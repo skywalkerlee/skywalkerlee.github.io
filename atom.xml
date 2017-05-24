@@ -121,9 +121,9 @@
       <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="mq" scheme="http://yoursite.com/tags/mq/"/>
-    
       <category term="消息队列" scheme="http://yoursite.com/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+    
+      <category term="mq" scheme="http://yoursite.com/tags/mq/"/>
     
       <category term="raft" scheme="http://yoursite.com/tags/raft/"/>
     
@@ -167,11 +167,11 @@
       <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="mq" scheme="http://yoursite.com/tags/mq/"/>
+      <category term="nsq" scheme="http://yoursite.com/tags/nsq/"/>
     
       <category term="消息队列" scheme="http://yoursite.com/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
     
-      <category term="nsq" scheme="http://yoursite.com/tags/nsq/"/>
+      <category term="mq" scheme="http://yoursite.com/tags/mq/"/>
     
       <category term="消息" scheme="http://yoursite.com/tags/%E6%B6%88%E6%81%AF/"/>
     
